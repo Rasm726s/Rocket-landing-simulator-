@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:Background/space background.png.import
-uid="uid://tv77608evfpg"
-path="res://.godot/imported/space background.png-f1066a8f9e2651d0e84916f98eed83b3.ctex"
-========
 uid="uid://bj7pjpqwo4tov"
 path="res://.godot/imported/Among-Us-Red-Crewmate.png-9ee7dd97b891ee0b978c623926d9a04f.ctex"
->>>>>>>> 978465fb90cb29d7fbc0c8e941d06e87bab71076:Models/Among-Us-Red-Crewmate.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:Background/space background.png.import
-source_file="res://Background/space background.png"
-dest_files=["res://.godot/imported/space background.png-f1066a8f9e2651d0e84916f98eed83b3.ctex"]
-========
 source_file="res://Models/Among-Us-Red-Crewmate.png"
 dest_files=["res://.godot/imported/Among-Us-Red-Crewmate.png-9ee7dd97b891ee0b978c623926d9a04f.ctex"]
->>>>>>>> 978465fb90cb29d7fbc0c8e941d06e87bab71076:Models/Among-Us-Red-Crewmate.png.import
 
 [params]
 

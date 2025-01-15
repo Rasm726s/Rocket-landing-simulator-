@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c2piu0gs55rqu"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PositionLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Position"
+
+[node name="PositionValue" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "P value"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ThrustLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Thrust"
+
+[node name="ThrustValue" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "T value"
