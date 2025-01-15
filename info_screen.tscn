@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyain5226tl8k"]
+
+[ext_resource type="Texture2D" uid="uid://tv77608evfpg" path="res://Background/space background.png" id="1_756t1"]
+
+[node name="Info screen" type="Node2D"]
+
+[node name="SpaceBackground" type="Sprite2D" parent="."]
+position = Vector2(304, 2)
+scale = Vector2(0.313542, 0.448611)
+texture = ExtResource("1_756t1")

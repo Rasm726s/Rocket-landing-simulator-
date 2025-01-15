@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://108sb2kpld3o"]
+
+[ext_resource type="PackedScene" uid="uid://rcbmkvcoi0ns" path="res://Background/Back ground - startscreen.tscn" id="1_pif4k"]
+
+[node name="Start screen" type="Node2D"]
+
+[node name="BackGround-Startscreen" parent="." instance=ExtResource("1_pif4k")]
+position = Vector2(-8, 80)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Info button" type="Button" parent="HUD"]
+offset_left = 293.0
+offset_top = 359.0
+offset_right = 444.0
+offset_bottom = 434.0
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+text = "Info "
+
+[node name="StartButton" type="Button" parent="HUD"]
+offset_left = 620.0
+offset_top = 370.0
+offset_right = 764.0
+offset_bottom = 437.0
+scale = Vector2(1.5, 1.5)
+button_mask = 0
+text = "Start"
