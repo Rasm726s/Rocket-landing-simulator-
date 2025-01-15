@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://i3rolahv3q3u"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_egbms"]
+[ext_resource type="Texture2D" uid="uid://bj7pjpqwo4tov" path="res://Models/Among-Us-Red-Crewmate.png" id="2_11jpb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_27cut"]
+radius = 12.0
+height = 32.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4wei"]
+size = Vector2(184, 20)
+
+[sub_resource type="CurveTexture" id="CurveTexture_mrdnh"]
+
+[node name="Simulation" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_egbms")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_11jpb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_27cut")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_speed = 2.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_p4wei")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-4.17233e-07, -4.76837e-07)
+scale = Vector2(0.710938, 20)
+texture = SubResource("CurveTexture_mrdnh")
