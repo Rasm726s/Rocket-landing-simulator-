@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://v7skrpcrqil5"]
+
+[ext_resource type="Texture2D" uid="uid://b70i1flmhdxfd" path="res://Models/simple-stars.png" id="1_phvk0"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(1000, 1000)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_phvk0")

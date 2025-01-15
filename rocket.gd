@@ -1,8 +1,16 @@
 extends CharacterBody2D
 
-
+# Movement constants
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const MAX_ROTATION_SPEED = 10
+const ROTATION_INCREMENT = 2
+const MAX_THRUST = 500.0
+const THRUST_INCREMENT = 50
+
+# Variables for movement
+var current_thrust: float = 0.0
+var current_rotation: float = 0.0
 
 # Define a spawn position variable
 var spawn_position: Vector2 = Vector2(0, -200)  # Replace with your desired coordinates

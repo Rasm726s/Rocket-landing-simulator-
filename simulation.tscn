@@ -1,38 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://i3rolahv3q3u"]
+[gd_scene load_steps=7 format=3 uid="uid://f5x05q0ystaj"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_egbms"]
-[ext_resource type="Texture2D" uid="uid://bj7pjpqwo4tov" path="res://Models/Among-Us-Red-Crewmate.png" id="2_11jpb"]
+[ext_resource type="PackedScene" uid="uid://v7skrpcrqil5" path="res://background.tscn" id="1_43pc1"]
+[ext_resource type="Script" path="res://simulation.gd" id="1_bk6c1"]
+[ext_resource type="PackedScene" uid="uid://i3rolahv3q3u" path="res://rocket.tscn" id="1_o04b8"]
+[ext_resource type="PackedScene" uid="uid://c2piu0gs55rqu" path="res://hud.tscn" id="3_63g0u"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_27cut"]
-radius = 12.0
-height = 32.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4wei"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avfcf"]
 size = Vector2(184, 20)
 
-[sub_resource type="CurveTexture" id="CurveTexture_mrdnh"]
+[sub_resource type="CurveTexture" id="CurveTexture_x3bbb"]
 
 [node name="Simulation" type="Node2D"]
+script = ExtResource("1_bk6c1")
 
-[node name="Player" type="CharacterBody2D" parent="."]
-script = ExtResource("1_egbms")
+[node name="Background" parent="." instance=ExtResource("1_43pc1")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_11jpb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CapsuleShape2D_27cut")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position_smoothing_speed = 2.0
+[node name="Rocket" parent="." instance=ExtResource("1_o04b8")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_p4wei")
+position = Vector2(6.10352e-05, 10)
+shape = SubResource("RectangleShape2D_avfcf")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-4.17233e-07, -4.76837e-07)
+position = Vector2(6.06179e-05, 10)
 scale = Vector2(0.710938, 20)
-texture = SubResource("CurveTexture_mrdnh")
+texture = SubResource("CurveTexture_x3bbb")
+
+[node name="HUD" parent="." instance=ExtResource("3_63g0u")]
