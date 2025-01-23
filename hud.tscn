@@ -11,7 +11,7 @@ layout_mode = 2
 
 [node name="PositionLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Position"
+text = "Altitude"
 
 [node name="PositionValue" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -27,3 +27,14 @@ text = "Thrust"
 [node name="ThrustValue" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 text = "T value"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VelocityLabel" type="Label" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Velocity"
+
+[node name="VelocityValue" type="Label" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "V value"
