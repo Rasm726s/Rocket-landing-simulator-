@@ -1,10 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyain5226tl8k"]
+[gd_scene load_steps=3 format=3 uid="uid://dyain5226tl8k"]
 
-[ext_resource type="Texture2D" uid="uid://tv77608evfpg" path="res://Background/space background.png" id="1_756t1"]
+[ext_resource type="Texture2D" uid="uid://bjq8ywh8hemrw" path="res://Background/space background.png" id="1_756t1"]
+[ext_resource type="Script" path="res://back_button.gd" id="2_ks4vk"]
 
 [node name="Info screen" type="Node2D"]
 
 [node name="SpaceBackground" type="Sprite2D" parent="."]
-position = Vector2(304, 2)
-scale = Vector2(0.313542, 0.448611)
+position = Vector2(574, 335.375)
+scale = Vector2(0.598958, 0.61412)
 texture = ExtResource("1_756t1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Back button" type="Button" parent="CanvasLayer"]
+offset_left = 482.0
+offset_top = 451.0
+offset_right = 660.0
+offset_bottom = 519.0
+text = "Back"
+script = ExtResource("2_ks4vk")
+
+[node name="Infor text" type="TextEdit" parent="CanvasLayer"]
+visible = false
+offset_left = 215.0
+offset_top = 125.0
+offset_right = 883.0
+offset_bottom = 424.0
+pivot_offset = Vector2(535, 224)
+text = "This game challenges you to guide Rocket Man to a safe landing by carefully managing your rocket's fuel. Use precise thrust control to slow your descent and avoid crashing, but be mindful—running out of fuel spells disaster! With obstacles and hazards to navigate, every move requires strategy and skill. Can you master the perfect landing?"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 338.0
+offset_top = 182.0
+offset_right = 847.0
+offset_bottom = 369.0
+text = "This game challenges you to guide Rocket Man to a safe landing by carefully managing your rocket's fuel. Use precise thrust control to slow your descent and avoid crashing, but be mindful—running out of fuel spells disaster! With obstacles and hazards to navigate, every move requires strategy and skill. Can you master the perfect landing?"
+autowrap_mode = 2
+
+[connection signal="pressed" from="CanvasLayer/Back button" to="CanvasLayer/Back button" method="_on_pressed"]
