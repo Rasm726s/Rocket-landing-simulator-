@@ -1,39 +1,55 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 # Movement constants
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-const MAX_ROTATION_SPEED = 10
-const ROTATION_INCREMENT = 2
-const MAX_THRUST = 500.0
-const THRUST_INCREMENT = 50
+const MAX_ROTATION_SPEED = 15
+const ROTATION_SPEED = .008
+const MAX_THRUST = 2.0 * 100
+const THRUST_INCREMENT = 0.25 * 100
 
 # Variables for movement
 var current_thrust: float = 0.0
 var current_rotation: float = 0.0
+var thrust_vector = Vector2(0,-1).rotated(rotation) * current_thrust
 
 # Define a spawn position variable
-var spawn_position: Vector2 = Vector2(0, -200)  # Replace with your desired coordinates
+var spawn_position: Vector2 = Vector2(0, -10 * 100)  # Replace with your desired coordinates
 
+# Velocity before collision
+var pre_collision_velocity : Vector2
+
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Set the initial position of the character to the spawn position
 	position = spawn_position
 
+# Called when the rocket hits the moons surface
+func _on_body_entered(body: Node) -> void:
+	var message = str(pre_collision_velocity)
+	print (message)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	pre_collision_velocity = linear_velocity
+	
+	if Input.is_action_pressed("rotate_ccw"):
+		if angular_velocity > - MAX_ROTATION_SPEED:
+			angular_velocity -= ROTATION_SPEED
+	
+	if Input.is_action_pressed("rotate_cw"):
+		if angular_velocity < MAX_ROTATION_SPEED:
+			angular_velocity += ROTATION_SPEED
+	
+	if Input.is_action_just_pressed("increase_thrust"):
+		if current_thrust < MAX_THRUST:
+			current_thrust += THRUST_INCREMENT
+	
+	if Input.is_action_just_pressed("decrease_thrust"):
+		if current_thrust > 0:
+			current_thrust -= THRUST_INCREMENT
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	
+	var thrust_vector = Vector2(0,-1).rotated(rotation) * current_thrust
+	state.apply_force(thrust_vector)
+	#print(thrust_vector)
+	
+	#collision_velocity = state.linear_velocity

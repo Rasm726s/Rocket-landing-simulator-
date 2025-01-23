@@ -3,21 +3,31 @@
 [ext_resource type="Script" path="res://rocket.gd" id="1_am54o"]
 [ext_resource type="Texture2D" uid="uid://bj7pjpqwo4tov" path="res://Models/Among-Us-Red-Crewmate.png" id="2_3oq0w"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_27cut"]
-radius = 12.0
-height = 32.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2b3i5"]
+size = Vector2(170, 226)
 
-[node name="Rocket" type="Node2D"]
-
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Rocket" type="RigidBody2D"]
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_am54o")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-scale = Vector2(0.1, 0.1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -83)
+scale = Vector2(0.55, 0.55)
 texture = ExtResource("2_3oq0w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CapsuleShape2D_27cut")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -80)
+zoom = Vector2(0.5, 0.5)
 position_smoothing_speed = 2.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(-36, -4, 35, -4, 47, -13, 52, -27, 59, -89, 61, -121, 51, -144, 45, -154, 38, -162, 22, -168, 8, -168, -9, -166, -25, -161, -45, -138, -48, -125, -59, -119, -67, -104, -69, -85, -66, -50, -59, -30, -44, -27, -44, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -82)
+shape = SubResource("RectangleShape2D_2b3i5")
+disabled = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
