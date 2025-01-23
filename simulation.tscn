@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-[gd_scene load_steps=7 format=3 uid="uid://miu147duwpos"]
-=======
 [gd_scene load_steps=8 format=3 uid="uid://f5x05q0ystaj"]
->>>>>>> 2e5c3c84b800a2a5945e5527452fbef677bf802d
 
-[ext_resource type="PackedScene" path="res://background.tscn" id="1_43pc1"]
+[ext_resource type="PackedScene" uid="uid://v7skrpcrqil5" path="res://background.tscn" id="1_43pc1"]
 [ext_resource type="Script" path="res://simulation.gd" id="1_bk6c1"]
-[ext_resource type="PackedScene" path="res://rocket.tscn" id="1_o04b8"]
-[ext_resource type="PackedScene" path="res://hud.tscn" id="3_63g0u"]
+[ext_resource type="PackedScene" uid="uid://i3rolahv3q3u" path="res://rocket.tscn" id="1_o04b8"]
+[ext_resource type="PackedScene" uid="uid://c2piu0gs55rqu" path="res://hud.tscn" id="3_63g0u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avfcf"]
 size = Vector2(184, 59.4)
