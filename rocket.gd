@@ -82,6 +82,12 @@ func _physics_process(delta: float) -> void:
 			if current_thrust > 0:
 				current_thrust -= THRUST_INCREMENT
 
+	# To control when the jetpack is on and off 
+	if current_thrust > 0:
+		$GPUParticles2D.emitting = true
+	else:
+		$GPUParticles2D.emitting = false
+
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	
 	var thrust_vector = Vector2(0,-1).rotated(rotation) * current_thrust
