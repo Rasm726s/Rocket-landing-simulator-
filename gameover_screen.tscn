@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxyr5aa8bbwwx"]
+
+[ext_resource type="Script" path="res://gameover_screen.gd" id="1_so01t"]
+
+[node name="GameoverScreen" type="CanvasLayer"]
+offset = Vector2(500, 250)
+transform = Transform2D(1, 0, 0, 1, 500, 250)
+script = ExtResource("1_so01t")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 219.0
+offset_bottom = 107.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+offset_right = 210.0
+offset_bottom = 104.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="CollisionVelocity" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Colllision Velocity:"
+
+[node name="CollisionVelocityValue" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "CV value"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="FuelRemaining" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Fuel remaining:"
+
+[node name="FuelRemainingValue" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "FR value"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Score" type="Label" parent="Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Score:"
+
+[node name="ScoreValue" type="Label" parent="Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "S value"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Highscore" type="Label" parent="Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Highscore"
+
+[node name="HighscoreValue" type="Label" parent="Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "H value"
+
+[node name="Reset" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 108.0
+offset_right = 214.0
+offset_bottom = 139.0
+text = "Reset"
+
+[connection signal="pressed" from="Panel/Reset" to="." method="_on_reset_pressed"]

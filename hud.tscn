@@ -11,7 +11,7 @@ layout_mode = 2
 
 [node name="PositionLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Altitude"
+text = "Altitude:"
 
 [node name="PositionValue" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -22,7 +22,7 @@ layout_mode = 2
 
 [node name="ThrustLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "Thrust"
+text = "Thrust:"
 
 [node name="ThrustValue" type="Label" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -31,10 +31,43 @@ text = "T value"
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="VelocityLabel" type="Label" parent="VBoxContainer/HBoxContainer3"]
+[node name="VerticalVelocityLabel" type="Label" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-text = "Velocity"
+text = "Vertical Velocity:"
 
-[node name="VelocityValue" type="Label" parent="VBoxContainer/HBoxContainer3"]
+[node name="VerticalVelocityValue" type="Label" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 text = "V value"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HorizontalVelocityLabel" type="Label" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Horizontal Velocity:"
+
+[node name="HorizontalVelocityValue" type="Label" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "V value"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="AngleLabel" type="Label" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Angle:"
+
+[node name="AngleValue" type="Label" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "A value"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="FuelLabel" type="Label" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "Fuel:"
+
+[node name="FuelValue" type="Label" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "F value"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dyain5226tl8k"]
 
-[ext_resource type="Texture2D" uid="uid://bjq8ywh8hemrw" path="res://Background/space background.png" id="1_756t1"]
+[ext_resource type="Texture2D" uid="uid://cy76vp6f1qlvq" path="res://Background/space background.png" id="1_756t1"]
 [ext_resource type="Script" path="res://back_button.gd" id="2_ks4vk"]
 
 [node name="Info screen" type="Node2D"]
