@@ -1,7 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://i3rolahv3q3u"]
+[gd_scene load_steps=8 format=3 uid="uid://i3rolahv3q3u"]
 
 [ext_resource type="Script" path="res://rocket.gd" id="1_am54o"]
 [ext_resource type="Texture2D" uid="uid://bj7pjpqwo4tov" path="res://Models/Among-Us-Red-Crewmate.png" id="2_3oq0w"]
+[ext_resource type="Texture2D" uid="uid://dyocs3qwe0s28" path="res://Background/fire.png" id="2_j3viy"]
+
+[sub_resource type="Gradient" id="Gradient_4ul1p"]
+offsets = PackedFloat32Array(0, 0.367647, 0.661765, 1)
+colors = PackedColorArray(0.956863, 0.490196, 0, 1, 1, 1, 1, 1, 0.57, 0.57, 0.57, 1, 0.24, 0.24, 0.24, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2fr1k"]
+gradient = SubResource("Gradient_4ul1p")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8uiey"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+color = Color(1, 0.835333, 0.24, 1)
+color_ramp = SubResource("GradientTexture1D_2fr1k")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b3i5"]
 size = Vector2(170, 226)
@@ -10,6 +24,12 @@ size = Vector2(170, 226)
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_am54o")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-44, -44)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_8uiey")
+texture = ExtResource("2_j3viy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -83)

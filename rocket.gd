@@ -11,6 +11,8 @@ var current_thrust: float = 0.0
 var current_rotation: float = 0.0
 var thrust_vector = Vector2(0,-1).rotated(rotation) * current_thrust
 
+
+
 # Define a spawn position variable
 var spawn_position: Vector2 = Vector2(0, -10 * 100)  # Replace with your desired coordinates
 
@@ -45,6 +47,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("decrease_thrust"):
 		if current_thrust > 0:
 			current_thrust -= THRUST_INCREMENT
+	
+	# To control when the jetpack is on and off 
+	if current_thrust > 0:
+		$GPUParticles2D.emitting = true
+	else:
+		$GPUParticles2D.emitting = false
+	
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	

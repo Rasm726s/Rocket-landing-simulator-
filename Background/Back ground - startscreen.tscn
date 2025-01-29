@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://rcbmkvcoi0ns"]
 
-[ext_resource type="Texture2D" uid="uid://bjq8ywh8hemrw" path="res://Background/space background.png" id="1_yk3n4"]
+[ext_resource type="Texture2D" uid="uid://cy76vp6f1qlvq" path="res://Background/space background.png" id="1_yk3n4"]
 
 [node name="BackGround-Startscreen" type="Node2D"]
 
