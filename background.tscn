@@ -6,7 +6,7 @@
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 repeat_size = Vector2(1000, 1000)
-repeat_times = 3
+repeat_times = 5
 limit_begin = Vector2(-1e+08, -1e+08)
 limit_end = Vector2(1e+08, 1e+08)
 

@@ -1,38 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://f5x05q0ystaj"]
+[gd_scene load_steps=7 format=3 uid="uid://f5x05q0ystaj"]
 
 [ext_resource type="PackedScene" uid="uid://v7skrpcrqil5" path="res://background.tscn" id="1_43pc1"]
 [ext_resource type="Script" path="res://simulation.gd" id="1_bk6c1"]
 [ext_resource type="PackedScene" uid="uid://i3rolahv3q3u" path="res://rocket.tscn" id="1_o04b8"]
 [ext_resource type="PackedScene" uid="uid://c2piu0gs55rqu" path="res://hud.tscn" id="3_63g0u"]
+[ext_resource type="PackedScene" uid="uid://cviprjus00k8g" path="res://moon.tscn" id="3_83y08"]
 [ext_resource type="PackedScene" uid="uid://cxyr5aa8bbwwx" path="res://gameover_screen.tscn" id="5_j2nic"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_avfcf"]
-size = Vector2(184, 59.4)
-
-[sub_resource type="Gradient" id="Gradient_ariud"]
-colors = PackedColorArray(0.894922, 0.894922, 0.894922, 1, 0.886262, 0.886261, 0.886262, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_jsfm4"]
-gradient = SubResource("Gradient_ariud")
 
 [node name="Simulation" type="Node2D"]
 script = ExtResource("1_bk6c1")
 
 [node name="Background" parent="." instance=ExtResource("1_43pc1")]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-scale = Vector2(100, 10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(6.10352e-05, 29.7)
-scale = Vector2(100, 1)
-shape = SubResource("RectangleShape2D_avfcf")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-modulate = Color(0.650128, 0.650128, 0.650128, 1)
-position = Vector2(6.06179e-05, 29.8)
-scale = Vector2(100, 59.6)
-texture = SubResource("GradientTexture1D_jsfm4")
+[node name="Moon" parent="." instance=ExtResource("3_83y08")]
 
 [node name="Rocket" parent="." instance=ExtResource("1_o04b8")]
 
