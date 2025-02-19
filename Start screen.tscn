@@ -1,34 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://difx58ismfava"]
+[gd_scene load_steps=5 format=3 uid="uid://difx58ismfava"]
 
 [ext_resource type="Script" path="res://start_screen.gd" id="1_36pvu"]
-[ext_resource type="Texture2D" uid="uid://6n6j5kuu8ktl" path="res://Background/Start_screen.png" id="4_cfw0j"]
+[ext_resource type="Texture2D" uid="uid://bane5mlc1elxx" path="res://Models/Untitled design (4).png" id="2_sd4mu"]
+[ext_resource type="Texture2D" uid="uid://cpfdrcv7bo88w" path="res://Models/IMG_6761.png" id="3_rg0rk"]
+[ext_resource type="Theme" uid="uid://vo62nrn0rawr" path="res://sim_theme.tres" id="4_8ha5i"]
 
 [node name="Start screen" type="Node2D"]
 script = ExtResource("1_36pvu")
 
-[node name="backGround-startscreen" type="Sprite2D" parent="."]
-position = Vector2(584, 336)
-scale = Vector2(0.614583, 0.703704)
-texture = ExtResource("4_cfw0j")
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(578, 321)
+scale = Vector2(0.610185, 0.610185)
+texture = ExtResource("2_sd4mu")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(588, 204)
+scale = Vector2(0.5505, 0.5505)
+texture = ExtResource("3_rg0rk")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Infobutton" type="Button" parent="HUD"]
-offset_left = 293.0
-offset_top = 359.0
-offset_right = 444.0
-offset_bottom = 434.0
-scale = Vector2(1.5, 1.5)
+offset_left = 411.0
+offset_top = 522.0
+offset_right = 551.0
+offset_bottom = 597.0
 size_flags_horizontal = 4
+theme = ExtResource("4_8ha5i")
 text = "Info "
 
 [node name="Startbutton" type="Button" parent="HUD"]
-offset_left = 699.0
-offset_top = 359.0
-offset_right = 850.0
-offset_bottom = 434.0
-scale = Vector2(1.5, 1.5)
-text = "Start button"
+offset_left = 618.0
+offset_top = 522.0
+offset_right = 758.0
+offset_bottom = 597.0
+theme = ExtResource("4_8ha5i")
+text = "Start"
+
+[node name="Quitbutton" type="Button" parent="HUD"]
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 72.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 20
+text = "Quit"
 
 [connection signal="pressed" from="HUD/Infobutton" to="." method="_on_infobutton_pressed"]
 [connection signal="pressed" from="HUD/Startbutton" to="." method="_on_startbutton_pressed"]
+[connection signal="pressed" from="HUD/Quitbutton" to="." method="_on_quitbutton_pressed"]

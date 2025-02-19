@@ -29,15 +29,20 @@ func score():
 	const k=6.25
 	const t=0.3
 	
-	if total_collision_velocity > 3:
+	if total_collision_velocity > 2:
 		return 0
 	return (100-total_collision_velocity*k)+(rocket.fuel_remaining*t)
+
+func update_highscore():
+	if score() >= Global.highscore:
+		Global.highscore = score()
+	return Global.highscore
 
 func _ready() -> void:
 	gameover_screen.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 
 	position_value.text = str(snapped(rocket.position.y*-1/100,0.1))
 	thrust_value.text = str(snapped(rocket.current_thrust/100,0.1))
@@ -50,6 +55,6 @@ func _process(delta: float) -> void:
 		collision_velocity_value.text = str(snapped(rocket.pre_collision_velocity.length()/100,0.1))
 		fuel_remaining_value.text = str(rocket.fuel_remaining)
 		score_value.text = str(snapped(score(),0.1))
-		highscore_value.text = "na"
+		highscore_value.text = str(snapped(update_highscore(),0.1))
 		await get_tree().create_timer(2.0).timeout
 		gameover_screen.show()

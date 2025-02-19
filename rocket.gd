@@ -12,7 +12,7 @@ var current_thrust: float = 0.0
 var current_rotation: float = 0.0
 
 # Define a spawn position variable
-var spawn_position: Vector2 = Vector2(0, -10 * 100)  # Replace with your desired coordinates
+var spawn_position: Vector2 = Vector2(0, -100 * 100)  # Replace with your desired coordinates
 
 # Variables for landing
 var pre_collision_velocity : Vector2
@@ -47,12 +47,12 @@ func _on_body_entered(body: Node) -> void:
 		print(pre_collision_velocity.length())
 		$Crewmate.visible = false
 		$DeadCrewmate.visible = true
-		$CrewmateCollisionShape.disabled = true
-		$DeadCrewmateCollisionShape.disabled = false
+		$CrewmateCollisionShape.set_deferred("disabled", true)
+		$DeadCrewmateCollisionShape.set_deferred("disabled", false)
 
 func _on_timer_timeout() -> void:
 	if fuel_remaining >= 0:
-		fuel_remaining -= current_thrust / THRUST_INCREMENT * 0.15
+		fuel_remaining -= current_thrust / THRUST_INCREMENT * 0.10
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

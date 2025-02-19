@@ -19,7 +19,7 @@ height = 1000
 fill_from = Vector2(1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e31aj"]
-size = Vector2(100000, 400)
+size = Vector2(200000, 400)
 
 [node name="Moon" type="Node2D"]
 
@@ -30,10 +30,7 @@ repeat_times = 3
 
 [node name="Mountains" type="Sprite2D" parent="ParallaxMountains"]
 rotation = 0.785398
-scale = Vector2(1, 1)
 texture = SubResource("GradientTexture2D_wmdqh")
-
-[node name="Node2D" type="Node2D" parent="ParallaxMountains"]
 
 [node name="ParallaxGround" type="Parallax2D" parent="."]
 repeat_size = Vector2(1000, 0)
@@ -46,5 +43,5 @@ texture = SubResource("GradientTexture2D_7stku")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="GroundCollision" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 200)
+position = Vector2(-11289, 200)
 shape = SubResource("RectangleShape2D_e31aj")
