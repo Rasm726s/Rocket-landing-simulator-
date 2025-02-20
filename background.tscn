@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://v7skrpcrqil5"]
+[gd_scene load_steps=5 format=3 uid="uid://v7skrpcrqil5"]
 
 [ext_resource type="Texture2D" uid="uid://b70i1flmhdxfd" path="res://Models/simple-stars.png" id="1_phvk0"]
+[ext_resource type="Texture2D" uid="uid://btycbsu2i7he2" path="res://Background/pngtree-cartoon-cartoon-stars-cartoon-planet-hand-painted-png-image_3919963-removebg-preview.png" id="2_xae63"]
+[ext_resource type="Texture2D" uid="uid://civy5napq1a8p" path="res://Background/png-clipart-cartoon-universe-planet-cartoon-planet-cartoon-universe-removebg-preview.png" id="3_vt8xm"]
+[ext_resource type="Texture2D" uid="uid://bl1vr3qsq173x" path="res://Background/png-clipart-earth-cartoon-drawing-world-comics-3d-computer-graphics-thumbnail-removebg-preview.png" id="4_qhs3h"]
 
 [node name="Background" type="Node2D"]
 
@@ -12,3 +15,18 @@ limit_end = Vector2(1e+08, 1e+08)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 texture = ExtResource("1_phvk0")
+
+[node name="Pngtree-cartoon-cartoon-stars-cartoon-planet-hand-painted-png-image3919963-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(-1506, -422)
+scale = Vector2(0.604, 0.604)
+texture = ExtResource("2_xae63")
+
+[node name="Png-clipart-cartoon-universe-planet-cartoon-planet-cartoon-universe-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(-125, 755)
+scale = Vector2(0.497658, 0.497658)
+texture = ExtResource("3_vt8xm")
+
+[node name="Png-clipart-earth-cartoon-drawing-world-comics-3d-computer-graphics-thumbnail-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(1692, -640)
+scale = Vector2(0.643678, 0.643678)
+texture = ExtResource("4_qhs3h")

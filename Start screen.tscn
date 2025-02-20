@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://difx58ismfava"]
+[gd_scene load_steps=6 format=3 uid="uid://difx58ismfava"]
 
 [ext_resource type="Script" path="res://start_screen.gd" id="1_36pvu"]
 [ext_resource type="Texture2D" uid="uid://bane5mlc1elxx" path="res://Models/Untitled design (4).png" id="2_sd4mu"]
 [ext_resource type="Texture2D" uid="uid://cpfdrcv7bo88w" path="res://Models/IMG_6761.png" id="3_rg0rk"]
 [ext_resource type="Theme" uid="uid://vo62nrn0rawr" path="res://sim_theme.tres" id="4_8ha5i"]
+[ext_resource type="Texture2D" uid="uid://bl1vr3qsq173x" path="res://Background/png-clipart-earth-cartoon-drawing-world-comics-3d-computer-graphics-thumbnail-removebg-preview.png" id="5_cgfyc"]
 
 [node name="Start screen" type="Node2D"]
 script = ExtResource("1_36pvu")
@@ -44,6 +45,11 @@ offset_right = 72.0
 offset_bottom = 47.0
 theme_override_font_sizes/font_size = 20
 text = "Quit"
+
+[node name="Png-clipart-earth-cartoon-drawing-world-comics-3d-computer-graphics-thumbnail-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(1051, 106)
+scale = Vector2(0.505747, 0.505747)
+texture = ExtResource("5_cgfyc")
 
 [connection signal="pressed" from="HUD/Infobutton" to="." method="_on_infobutton_pressed"]
 [connection signal="pressed" from="HUD/Startbutton" to="." method="_on_startbutton_pressed"]
