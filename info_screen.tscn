@@ -34,7 +34,7 @@ offset_left = 338.0
 offset_top = 182.0
 offset_right = 847.0
 offset_bottom = 369.0
-text = "This game challenges you to guide Rocket Man to a safe landing by carefully managing your rocket's fuel. Use precise thrust control to slow your descent and avoid crashing, but be mindful—running out of fuel spells disaster! With obstacles and hazards to navigate, every move requires strategy and skill. Can you master the perfect landing?"
+text = "This game challenges you to guide Rocket Man to a safe landing by carefully managing your rocket's fuel. Use precise thrust control to slow your descent and avoid crashing, but be mindful—running out of fuel spells disaster! Every move requires strategy and skill. Can you master the perfect landing?"
 autowrap_mode = 2
 
 [connection signal="pressed" from="CanvasLayer/Back button" to="CanvasLayer/Back button" method="_on_pressed"]
